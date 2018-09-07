@@ -28,19 +28,28 @@
     </div>
   </div>
 
-  <ul>
-    <li *ngFor=" let book of googleBooksService.books">
-   {{ book.title}}
-      <img class="book-thumbnail" src="{{book.thumbnail}}"
-      alt="">
+  <!-- <div  *ngFor=" let book of googleBooksService.books" class="card" style="width: 18rem;">
+   <img class="card-img-top" src="{{book.thumbnail}}" alt="Card image cap">
+   <div class="card-body">
+     <h5 class="card-title"> {{ book.title}}</h5>
+     <p class="card-text">{{book.description}}</p>
+     <a href="#" class="btn btn-primary">Go somewhere</a>
+   </div>
+ </div>
 
-      {{ book.authors}}
+ <ul>
+   <li *ngFor=" let book of googleBooksService.books">
 
-    </li>
-  </ul>
+     <img class="book-thumbnail" src="{{book.thumbnail}}"
+     alt="">
 
+     {{ book.authors}}
+
+   </li>
+ </ul>
+-->
   <!-- TODO: Show the results of the search -->
-    <!-- <app-book-list></app-book-list> -->
+     <app-book-list [books]="googleBooksService.books"></app-book-list>
 
   <div class="d-flex justify-content-center">
     <!-- TODO: Show pagnation -->
