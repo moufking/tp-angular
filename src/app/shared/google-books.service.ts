@@ -70,7 +70,7 @@ export class GoogleBooksService {
     return this.http.get(`${this.API_PATH}/${bookId}`)
   }
 
-  private bookFactory(item: any): Book {
+  public bookFactory(item: any): Book {
     return new Book(
       item.id,
       item.volumeInfo.title,

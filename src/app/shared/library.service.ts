@@ -33,7 +33,9 @@ export class LibraryService {
 
   addBook(book: Book) {
     if (!this.hasBook(book)) {
+      console.log(book);
       this.books.push(book);
+      console.log(this.books);
       this.save();
     }
   }
@@ -51,7 +53,7 @@ export class LibraryService {
   indexOf(book: Book): number {
     for (let i = 0; i < this.books.length; i++) {
       if (this.books[i].id === book.id) {
-        return i
+        return i;
       }
     }
     return -1;

@@ -8,7 +8,8 @@ import {LibraryService} from "../shared/library.service";
 })
 export class LibraryComponent implements OnInit {
 
-  constructor( private libraryService :LibraryService) {
+  constructor( private libraryService: LibraryService) {
+    console.log(libraryService.books);
   }
 
   ngOnInit() {
