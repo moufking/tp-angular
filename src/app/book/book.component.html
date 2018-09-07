@@ -1,0 +1,53 @@
+<div class="row m-3">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="text-center">Book Title</h2>
+
+    <h6 class="text-center">Book Subtitle</h6>
+
+    <div class=" m-3">
+      <img class="rounded center-block"
+           src="http://lorempixel.com/g/200/300/">
+    </div>
+
+
+    <dl>
+      <dt>Description</dt>
+      <dd>
+        <p [innerHtml]="'Hello this is the book <strong>description</strong> by binding to [innerHtml] we can use HTML tags'"></p>
+      </dd>
+
+      <dt>Authors</dt>
+      <dd>Asim Hussain</dd>
+
+      <dt>Categories</dt>
+      <dd>
+        <span class="mr-1 badge badge-pill badge-default">
+          Category 1
+        </span>
+        <span class="mr-1 badge badge-pill badge-default">
+          Category 2
+        </span>
+        <span class="mr-1 badge badge-pill badge-default">
+          Category 3
+        </span>
+      </dd>
+
+      <dt>Published Date</dt>
+      <dd>2017-01-01</dd>
+
+      <dt>Publisher</dt>
+      <dd>Code Craft</dd>
+    </dl>
+
+    <p>
+      <button type="button"
+              class="btn btn-primary">Add To Library
+      </button>
+      <button type="button"
+              class="btn btn-default">Remove From Library
+      </button>
+    </p>
+
+
+  </div>
+</div>
