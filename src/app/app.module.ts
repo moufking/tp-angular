@@ -9,12 +9,12 @@ import {BookComponent} from './book/book.component';
 import {BookListComponent} from './book-list/book-list.component';
 import {SearchComponent} from './search/search.component';
 import {LibraryComponent} from './library/library.component';
-import {RouterModule} from "@angular/router";
-import {routes} from "./app.routes";
-import {GoogleBooksService} from "./shared/google-books.service";
+import {RouterModule} from '@angular/router';
+import {routes} from './app.routes';
+import {GoogleBooksService} from './shared/google-books.service';
 import {PagerComponent} from './pager/pager.component';
-import {LibraryService} from "./shared/library.service";
-import { Router} from "@angular/router";
+import {LibraryService} from './shared/library.service';
+
 
 
 @NgModule({

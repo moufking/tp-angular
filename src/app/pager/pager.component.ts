@@ -1,4 +1,5 @@
 import {Component, OnInit, Input, Output, EventEmitter} from "@angular/core";
+import {GoogleBooksService} from '../shared/google-books.service'
 
 
 
@@ -11,21 +12,30 @@ import {Component, OnInit, Input, Output, EventEmitter} from "@angular/core";
 })
 export class PagerComponent implements OnInit {
 
+
+
   @Input()
   private page: number=1 ;
   @Input()
   private totalPages: number=0;
 @Output()
   private changePage: EventEmitter<number> = new EventEmitter<number>();
-  constructor() {
-  }
-
+  constructor( public books: GoogleBooksService){ }
   next() {
-    this.changePage.emit(this.page + 1);
+    if(this.books.page>=this.books.totalPages){
+      return ;
+    }
+    this.books.page +=1;
+    
+    this.books.searchBooks(this.books.query);
   }
 
   prev() {
-    this.changePage.emit(this.page - 1);
+    if(this.books.page<2){
+      return;
+    } 
+    this.books.page -=1;
+    this.books.searchBooks(this.books.query);
   }
 
 

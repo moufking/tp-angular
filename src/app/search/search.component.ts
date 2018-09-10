@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {GoogleBooksService} from "../shared/google-books.service";
-import {Router, ActivatedRoute} from "@angular/router";
+import {GoogleBooksService} from '../shared/google-books.service';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-search',
@@ -9,17 +9,16 @@ import {Router, ActivatedRoute} from "@angular/router";
 })
 export class SearchComponent implements OnInit {
 
-  private term: string =" ";
+  private term: string = '';
 
-  constructor( private router :Router, private route :ActivatedRoute,
+  constructor( private router: Router, private route :ActivatedRoute,
                private googleBooksService: GoogleBooksService ) {
     this.route.params.subscribe(params =>{
 
       console.log(params);
-      if(params['term'])
-      {
+      if (params['term']) {
 
-        this.term =params['term'];
+        this.term = params['term'];
         this.onSearch( this.term);
 
       }

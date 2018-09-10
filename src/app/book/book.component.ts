@@ -1,8 +1,7 @@
-import {Component} from "@angular/core";
-import {Book} from "../shared/book";
-import {Router} from "@angular/router";
-import {Router, ActivatedRoute} from "@angular/router";
-import {GoogleBooksService} from "../shared/google-books.service";
+import {Component} from '@angular/core';
+import {Book} from '../shared/book';
+import {Router, ActivatedRoute} from '@angular/router';
+import {GoogleBooksService} from '../shared/google-books.service';
 import {LibraryService} from '../shared/library.service';
 
 @Component({
@@ -19,11 +18,9 @@ export class BookComponent {
               private route: ActivatedRoute,
               private googleBooksService: GoogleBooksService,
               private libraryService: LibraryService) {
-    this.route.params.subscribe(params =>{
-
+    this.route.params.subscribe(params => {
       console.log(params);
-      if(params['bookId'])
-      {
+      if ( params['bookId'] ) {
         this.getBook (params['bookId']);
 
       }
@@ -41,8 +38,7 @@ export class BookComponent {
   }
 
   hasBook(book: Book): boolean {
-    if (book)
-    {
+    if (book) {
       console.log(book);
       return this.libraryService.hasBook(book);
     }
@@ -52,8 +48,7 @@ export class BookComponent {
 
   addBook(book: Book) {
 
-    if (book)
-    {
+    if (book) {
       console.log(book);
       return this.libraryService. addBook(book);
     }
@@ -61,8 +56,7 @@ export class BookComponent {
   }
 
   removeBook(book: Book) {
-    if (book)
-    {
+    if (book) {
       return this.libraryService.removeBook(book);
     }
   }
