@@ -11,15 +11,18 @@ export class SearchComponent implements OnInit {
 
   private term: string = '';
 
-  constructor( private router: Router, private route :ActivatedRoute,
+  constructor( private router: Router, private route: ActivatedRoute,
                private googleBooksService: GoogleBooksService ) {
-    this.route.params.subscribe(params =>{
+    this.route.params.subscribe(params => {
 
       console.log(params);
       if (params['term']) {
 
+        console.log(params['term']);
         this.term = params['term'];
         this.onSearch( this.term);
+        this.term = ''; // empty this case
+
 
       }
     });
