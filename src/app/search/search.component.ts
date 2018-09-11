@@ -10,14 +10,17 @@ import {Router, ActivatedRoute} from '@angular/router';
 export class SearchComponent implements OnInit {
 
   private term: string = '';
-  const cacheAvailable = 'caches' in self;
 
   constructor( private router: Router, private route: ActivatedRoute,
                private googleBooksService: GoogleBooksService ) {
-      caches.open('my-cache').then((cache) => {
-          cache.add('kkkk');
-         console.log(cache);
-      });
+      const options = {
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      }
+      const jsonResponse = new Response('{}', options);
+
+      console.log(jsonResponse);
     this.route.params.subscribe(params => {
       console.log(params);
       if (params['term']) {
