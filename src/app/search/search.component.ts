@@ -9,10 +9,10 @@ import {Router, ActivatedRoute} from '@angular/router';
 })
 export class SearchComponent implements OnInit {
 
-  private term: string = '';
+  term = '';
 
-  constructor( private router: Router, private route: ActivatedRoute,
-               private googleBooksService: GoogleBooksService ) {
+  constructor( private router: Router, public route: ActivatedRoute,
+               public googleBooksService: GoogleBooksService ) {
       const options = {
           headers: {
               'Content-Type': 'application/json'
