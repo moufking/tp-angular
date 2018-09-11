@@ -50,11 +50,11 @@
  </ul>
 -->
   <!-- TODO: Show the results of the search -->
-     <app-book-list [books]="googleBooksService.books"></app-book-list>
+     <app-book-list [books]='googleBooksService.books'></app-book-list>
 
   <div class="d-flex justify-content-center">
     <!-- TODO: Show pagnation -->
-    <app-pager [page]="googleBooksService.page" [totalPages]="googleBooksService.totalPages"
-               (changePage)="googleBooksService.page=$event"></app-pager>
+    <app-pager [page]='googleBooksService.page' [totalPages]='googleBooksService.totalPages'
+               (changePage)='googleBooksService.page=$event'></app-pager>
   </div>
 </div>

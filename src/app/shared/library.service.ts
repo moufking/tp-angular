@@ -11,6 +11,8 @@ export class LibraryService {
   }
 
   private save() {
+
+
     localStorage.setItem('books', JSON.stringify(this.books));
   }
 
