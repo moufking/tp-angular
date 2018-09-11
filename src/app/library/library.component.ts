@@ -8,7 +8,7 @@ import {LibraryService} from '../shared/library.service';
 })
 export class LibraryComponent implements OnInit {
 
-  constructor( private libraryService: LibraryService) {
+  constructor( public libraryService: LibraryService) {
     //console.log(libraryService.books);
   }
 
