@@ -1,5 +1,5 @@
 {
-  "name": "tp-ang",
+  "name": "test-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -21,23 +21,20 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-    "@ngx-progressbar/core": "^5.1.2",
     "core-js": "^2.5.4",
     "express": "^4.16.3",
-    "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.7.0",git
-    "@angular/cli": "^6.2.1",
-    "@angular/compiler-cli": "^6.1.7",
+    "@angular-devkit/build-angular": "~0.7.0",
+    "@angular/cli": "~6.1.2",
+    "@angular/compiler-cli": "^6.1.0",
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.6",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
     "codelyzer": "~4.2.1",
-    "enhanced-resolve": "^3.3.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
