@@ -3,6 +3,7 @@ import {Book} from '../shared/book';
 import {Router, ActivatedRoute} from '@angular/router';
 import {GoogleBooksService} from '../shared/google-books.service';
 import {LibraryService} from '../shared/library.service';
+//import {CacheService} from '../shared/cache.service';
 
 @Component({
   selector: 'app-book',
@@ -17,7 +18,8 @@ export class BookComponent {
   constructor(private router: Router,
               private route: ActivatedRoute,
               private googleBooksService: GoogleBooksService,
-              private libraryService: LibraryService) {
+              private libraryService: LibraryService,
+             ) {
     this.route.params.subscribe(params => {
       console.log(params);
       if ( params['bookId'] ) {
@@ -40,7 +42,9 @@ export class BookComponent {
   hasBook(book: Book): boolean {
     if (book) {
       console.log(book);
-      return this.libraryService.hasBook(book);
+     return this.libraryService.hasBook(book);
+    // return this.cacheService.hasValidCachedValue(book);
+     
     }
 
 

@@ -1,12 +1,11 @@
 <div class="container">
-  <ng-progress #progressBar></ng-progress>
   <div class="m-3 text-center">
     <form class="form-inline" (ngSubmit)="doSearch()">
       <div class="form-group">
         <input type="search"
                class="form-control"
                placeholder="Enter search string"
-               name="search" (click)="progressBar.start()"
+               name="search" 
                [(ngModel)]="term"
                required>
       </div>

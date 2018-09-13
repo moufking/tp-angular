@@ -3,7 +3,6 @@ import { map,tap } from 'rxjs/operators';
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
 import {Book} from './book';
-import {NgProgress } from '@ngx-progressbar/core';
 
 @Injectable()
 export class GoogleBooksService {
@@ -17,7 +16,7 @@ export class GoogleBooksService {
   public books: Book[];
 
 
-  constructor(private http: Http,public progress: NgProgress) {
+  constructor(private http: Http) {
   }
 
   get startIndex() {
@@ -65,8 +64,6 @@ export class GoogleBooksService {
         tap(_ => this.loading = false)
 
     ).subscribe((books) => this.books = books)
-
-      this.progress.complete ();
   }
 
   retrieveBook(bookId: string) {
