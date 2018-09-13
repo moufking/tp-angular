@@ -3,13 +3,12 @@ import {Injectable, Inject} from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { APP_CONFIG, AppConfig } from '../app-config/app-config.module';
-import { AuthHttp } from 'angular2-jwt';
 
 import {Book} from './book';
 
 @Injectable()
 export class GoogleBooksService {
-  private API_PATH: string = 'https://www.googleapis.com/books/v1/volumes';
+  //private API_PATH: string = 'https://www.googleapis.com/books/v1/volumes';
   public loading: boolean = false;
   public initialised: boolean = false;
   public totalItems: number = 0;
@@ -55,10 +54,12 @@ export class GoogleBooksService {
     this.http.get(`${this.config.apiEndpoint}?q=${this.query}&maxResults=${this.pageSize}&startIndex=${this.startIndex}`).pipe(
        
         tap(data => {
-          this.totalItems = data.totalItems;
+          const res :any =data;
+          this.totalItems = res.totalItems;
         }),
         map(data => {
-          return data.items ? data.items : [];
+          const res :any =data;
+          return res.items ? res.items : [];
         }),
         map(items => {
           return items.map(item => this.bookFactory(item))
