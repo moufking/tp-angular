@@ -33,8 +33,8 @@ export class BookComponent {
   getBook(bookId: string) {
     this.googleBooksService.retrieveBook(bookId)
         .subscribe(value => {
-          console.log(value.json());
-          this.book = this.googleBooksService.bookFactory(value.json());
+          console.log(value);
+          this.book = this.googleBooksService.bookFactory(value);
           console.log(this.book);
         });
   }

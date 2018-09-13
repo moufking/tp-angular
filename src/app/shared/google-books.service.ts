@@ -1,7 +1,10 @@
 import { map,tap } from 'rxjs/operators';
+import {Injectable, Inject} from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { APP_CONFIG, AppConfig } from '../app-config/app-config.module';
+import { AuthHttp } from 'angular2-jwt';
 
-import {Injectable} from '@angular/core';
-import {Http} from '@angular/http';
 import {Book} from './book';
 
 @Injectable()
@@ -16,7 +19,7 @@ export class GoogleBooksService {
   public books: Book[];
 
 
-  constructor(private http: Http) {
+  constructor(private http: HttpClient,@Inject(APP_CONFIG) private config: AppConfig) {
   }
 
   get startIndex() {
@@ -49,8 +52,8 @@ export class GoogleBooksService {
     this.loading = true;
     this.initialised = true;
     this.books = [];
-    this.http.get(`${this.API_PATH}?q=${this.query}&maxResults=${this.pageSize}&startIndex=${this.startIndex}`).pipe(
-        map(res => res.json()),
+    this.http.get(`${this.config.apiEndpoint}?q=${this.query}&maxResults=${this.pageSize}&startIndex=${this.startIndex}`).pipe(
+       
         tap(data => {
           this.totalItems = data.totalItems;
         }),
@@ -64,10 +67,11 @@ export class GoogleBooksService {
         tap(_ => this.loading = false)
 
     ).subscribe((books) => this.books = books)
+
   }
 
   retrieveBook(bookId: string) {
-    return this.http.get(`${this.API_PATH}/${bookId}`)
+    return this.http.get(`${this.config.apiEndpoint}/${bookId}`)
   }
 
   public bookFactory(item: any): Book {

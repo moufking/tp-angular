@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
+//import {HttpModule} from '@angular/http';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {BookComponent} from './book/book.component';
@@ -14,11 +14,12 @@ import {GoogleBooksService} from './shared/google-books.service';
 import {PagerComponent} from './pager/pager.component';
 import {LibraryService} from './shared/library.service';
 //import {CacheService} from './shared/cache.service';
-//import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { NgProgressModule } from '@ngx-progressbar/core';
-//import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
+import { AppConfigModule } from './app-config/app-config.module';
+//import { NgProgressRouterModule } from '@ngx-progressbar/router';
 
-import { NgProgressRouterModule } from '@ngx-progressbar/router';
  
 
 
@@ -37,15 +38,15 @@ import { NgProgressRouterModule } from '@ngx-progressbar/router';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    //HttpModule,
+    AppConfigModule,
     BrowserModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot(routes),
     NgProgressModule.forRoot(),
-   // NgProgressHttpModule.forRoot(),
-    //HttpClientModule
-    NgProgressModule.forRoot(),
-    NgProgressRouterModule.forRoot()
+    NgProgressHttpModule.forRoot(),
+   // NgProgressRouterModule.forRoot()
    
       
   ],
